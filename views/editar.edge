@@ -1,0 +1,37 @@
+@layout('layouts.app')
+
+@section('contenido')
+
+<div class="container">
+    <div  class="col">
+        <form class="row" action="/api/editar/guardar" method="post">
+            <div class="row">
+                <div class="col">
+                    <label for="id" class="form-label">Id:</label>
+                    <input type="text" class="form-control"  id="nombre" name="id"  value="{{info._id}}" readonly><br>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="name" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control"  id="name" name="name" value="{{info.name}}" required><br>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="description" class="form-label">Description:</label>
+                        <input type="text"class="form-control" id="description" name="description" value="{{info.description}}" required ><br>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="fecha" class="form-label"> Fecha:</label>
+                        <input type="datetime-local" class="form-control" id="fecha" name="fecha" value="{{info.fecha}}" required><br>
+                    </div>
+                </div>
+            <div class="col">
+                <button type="submit"  class="btn btn-primary text-right">Actualizar</button>
+                <a href="/api/Admin" class="btn btn-primary text-right ">Volver</a>
+            </div>
+        </form> 
+    </div>
+</div>
+
+
+@endsection

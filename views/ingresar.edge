@@ -1,0 +1,31 @@
+@layout('layouts.app')
+
+@section('contenido')
+
+<div class="container">
+    <div  class="col">
+        <form class="row " action="/api/registrar/guardar" method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="name" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control"  id="name" name="name" required><br>
+                </div>
+                <div class="col-md-4">
+                    <label for="description" class="form-label">Description:</label>
+                    <input type="text"class="form-control" id="description" name="description" required ><br>
+                </div>
+                <div class="col-md-4">
+                    <label for="fecha" class="form-label"> Fecha:</label>
+                    <input type="datetime-local" class="form-control" id="fecha" name="fecha" required><br>
+                </div>
+            </div>
+            <div class="col">
+                <button type="submit"  class="btn btn-primary text-right">Guardar</button>
+                <a href="/api/admin" class="btn btn-primary text-right ">Regresar</a>
+            </div>
+        </form> 
+    </div>
+</div>
+
+
+@endsection

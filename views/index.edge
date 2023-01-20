@@ -1,0 +1,47 @@
+@layout('layouts.app')
+
+@section('contenido')
+        <div class="row  ">
+            <div class="col offset-10">
+                <a href="/api/ingresar" class="btn btn-primary text-right">Registrar info</a>          
+            </div>
+        </div> 
+        
+            <table class="table ">
+                    <tr>
+                        
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    @each(info in info)
+                    <tr>
+                            <td>{{info._id}}</td>
+                            <td>{{info.name}}</td>
+                            <td>{{info.description}}</td>
+                            <td>{{info.fecha}}</td>
+                            
+                            <td>
+                                <div class="row">
+                                    <div  class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                        <div class="col-lg-4">
+                                            <a href="/api/editar/{{info._id}}" class="btn btn-success ">Editar</a>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <a href="/api/borrar/{{info._id}}" class="btn btn-danger  ">Borrar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                    </tr>
+                    @endeach
+                    </tbody>
+            </table>
+        
+
+
+@endsection
